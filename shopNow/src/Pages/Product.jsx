@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../Components/Navbar/Navbar'
+import Footer from '../Components/Footer/Footer'
 
 export default function Product() {
   return (
@@ -7,6 +8,7 @@ export default function Product() {
     <>
     <Navbar/>
      <div>Product</div>
+    <Footer/>
     </>
   )
 }
