@@ -1,0 +1,175 @@
+/* Base: Mobile styles */
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8fafc; /* Soft off-white background */
+  border-bottom: 1px solid #e2e8f0; /* Light gray border */
+}
+
+.navbar__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e293b; /* Dark slate for logo */
+}
+
+.navbar__search {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%; /* Ensure full width to adapt */
+}
+
+.navbar__search input {
+  flex: 1; /* Allow input to grow/shrink */
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0; /* Light gray border */
+  color: #1e293b; /* Dark slate text */
+  font-size: 1rem; /* Base font size */
+  min-width: 0; /* Prevent shrinking issues */
+}
+
+.navbar__search input::placeholder {
+  color: #64748b; /* Muted slate for placeholder */
+}
+
+.navbar__search button {
+  padding: 0.5rem 1rem;
+  background-color: #0d9488; /* Deep teal */
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem; /* Base font size */
+  white-space: nowrap; /* Prevent text wrap */
+  min-width: 0; /* Allow shrinking */
+}
+
+.navbar__search button:hover {
+  background-color: #0f766e; /* Darker teal hover */
+}
+
+.navbar__links {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar__links.show {
+  display: flex;
+}
+
+.navbar__links__item {
+  text-decoration: none;
+  color: #1e293b; /* Dark slate links */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: block; /* Ensure proper block-level styling */
+}
+
+.navbar__links__item:hover,
+.navbar__links__item--active {
+  background-color: #e2e8f0; /* Light gray background on hover/active */
+  color: #14b8a6; /* Vibrant teal text on hover/active */
+}
+
+.navbar__user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Login / Register Button */
+.navbar__user .navbar__auth {
+  background-color: #14b8a6; /* Vibrant teal */
+  border: none;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar__user .navbar__auth:hover {
+  background-color: #0d9488; /* Darker teal hover */
+}
+
+/* Logout Button */
+.navbar__user button:not(.navbar__auth) {
+  padding: 0.5rem 1rem;
+  background-color: #f87171; /* Subtle coral */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.navbar__user button:not(.navbar__auth):hover {
+  background-color: #ef4444; /* Darker coral hover */
+}
+
+.navbar__username {
+  margin-right: 0.5rem;
+  font-weight: bold;
+  color: #475569; /* Muted slate for username */
+}
+
+.navbar__hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #1e293b; /* Dark slate for hamburger icon */
+}
+
+/* Small screen adjustments (below 222px) */
+@media (max-width: 222px) {
+  .navbar__search input {
+    padding: 0.3rem;
+    font-size: 0.8rem; /* Reduce font size */
+  }
+
+  .navbar__search button {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem; /* Reduce font size */
+  }
+
+  .navbar__logo {
+    font-size: 1.2rem; /* Reduce logo size */
+  }
+
+  .navbar__user .navbar__auth {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem; /* Reduce button text size */
+  }
+}
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar__search {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .navbar__links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .navbar__hamburger {
+    display: none;
+  }
+}

@@ -1,0 +1,115 @@
+
+/* Footer styles */
+.footer {
+  background-color: #f8fafc; /* Soft off-white, matches navbar */
+  padding: 2rem 1rem;
+  border-top: 1px solid #e2e8f0; /* Light gray border */
+  color: #1e293b; /* Dark slate text */
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__nav a {
+  text-decoration: none;
+  color: #1e293b; /* Dark slate links */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer__nav a:hover {
+  color: #14b8a6; /* Vibrant teal on hover */
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__contact p {
+  margin: 0;
+  color: #475569; /* Muted slate for contact text */
+}
+
+.footer__contact a {
+  color: #1e293b; /* Dark slate links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__contact a:hover {
+  color: #14b8a6; /* Vibrant teal on hover */
+}
+
+.footer__social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__social a {
+  color: #1e293b; /* Dark slate icons */
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer__social a:hover {
+  color: #14b8a6; /* Vibrant teal on hover */
+}
+
+.footer__copyright {
+  text-align: center;
+  color: #475569; /* Muted slate for copyright */
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Existing styles remain the same */
+
+.footer__nav a,
+.footer__nav__item {
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer__nav__item:hover,
+.footer__nav__item--active {
+  color: #14b8a6;
+}
+
+/* Rest of the existing CSS remains unchanged */
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+  .footer__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer__nav {
+    flex: 1;
+  }
+
+  .footer__contact {
+    flex: 1;
+  }
+
+  .footer__social {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
