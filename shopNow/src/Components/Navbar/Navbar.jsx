@@ -25,7 +25,7 @@ function Navbar() {
   return (
     <header>
       <nav className="navbar">
-        <div className="navbar__logo">Logo</div>
+        <div className="navbar__logo" style={{fontFamily : 'cursive',color: '#0d9488'}}>SHOP<span style={{color:'black'}}>now</span></div>
 
         <div className="navbar__search">
           <input type="text" placeholder="Search products..." />
