@@ -27,11 +27,11 @@ function Register() {
           }
           let newUser = {...user, cart : []}
           setUserData(prev => ([...prev , newUser]))
-          
+
           console.log(userData);
           localStorage.setItem("userData" , JSON.stringify([...userData , newUser]))
 
-          setToken(localStorage.setItem("token" , user.name))
+          // setToken(localStorage.setItem("token" , user.name))
 
           alert("Registered Successfully")
           navigate('/login')

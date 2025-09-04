@@ -15,16 +15,17 @@ function Navbar() {
   const { token , setToken } = useContext(AuthData);
   const  routerNavigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
   const handleLogin = () => {
     routerNavigate('/login')
     // setUser({ name: "Shivam" });
-    if(token) setUser(token)
+     
   }; 
 
   const handleLogout = () => {
-    setUser(null);
+     
+    localStorage.removeItem("token");
     setToken(null);
   };
 
@@ -54,9 +55,9 @@ function Navbar() {
         </div>
 
         <div className="navbar__user">
-          {user ? (
+          {token ? (
             <>
-              <span className="navbar__username">Hello, {user.name}</span>
+              <span className="navbar__username">Hello, {token }</span>
               <button onClick={handleLogout}>Logout</button>
             </>
           ) : (
