@@ -20,7 +20,7 @@ function Navbar() {
   const handleLogin = () => {
     routerNavigate('/login')
     // setUser({ name: "Shivam" });
-    if(token) setUser({name : token})
+    if(token) setUser(token)
   }; 
 
   const handleLogout = () => {

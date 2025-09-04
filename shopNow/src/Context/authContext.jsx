@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import { createContext, useState } from 'react'
 
 export  const AuthData = createContext()
 
@@ -7,7 +7,7 @@ function AuthContext({children}) {
     const data = localStorage.getItem("userData")
     return data ? JSON.parse(data) : []
   })
-  const [ token , setToken] = useState(null)
+  const [ token , setToken] = useState(localStorage.getItem("token") || null)
      
   return (
     <AuthData.Provider value={{userData , setUserData , token , setToken}}>
