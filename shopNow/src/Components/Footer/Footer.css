@@ -5,7 +5,7 @@
   padding: 2rem 1rem;
   border-top: 1px solid #e2e8f0; /* Light gray border */
   color: #1e293b; /* Dark slate text */
-  text-overflow: hidden; /* Prevent overflow */
+  text-overflow:ellipsis; /* Prevent overflow */
 }
 
 .footer__container {

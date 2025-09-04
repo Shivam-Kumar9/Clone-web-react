@@ -1,6 +1,7 @@
 import { RxHamburgerMenu } from "react-icons/rx";
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { NavLink , useNavigate } from "react-router-dom";
+import { useState , useContext  } from "react";
+import { AuthData } from "../../Context/authContext";
 
 import "./Navbar.css";
 
@@ -11,15 +12,20 @@ const navLinks = [
 ];
 
 function Navbar() {
+  const { token , setToken } = useContext(AuthData);
+  const  routerNavigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
 
   const handleLogin = () => {
-    setUser({ name: "Shivam" });
-  };
+    routerNavigate('/login')
+    // setUser({ name: "Shivam" });
+    if(token) setUser({name : token})
+  }; 
 
   const handleLogout = () => {
     setUser(null);
+    setToken(null);
   };
 
   return (

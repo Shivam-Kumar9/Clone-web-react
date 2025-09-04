@@ -1,4 +1,5 @@
  body {
+  box-sizing: border-box;
   margin: 0;
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -9,7 +10,7 @@
 main {
   padding-bottom: 60px; /* Match footer height to avoid overlap */
 }
-
+/* 
 .footer {
   position: absolute;
   bottom: 0;
@@ -19,6 +20,6 @@ main {
   border-top: 1px solid #e2e8f0;
   color: #1e293b;
   flex-shrink: 0;
-}
+} */
 
 /* Rest of the footer styles remain the same */
