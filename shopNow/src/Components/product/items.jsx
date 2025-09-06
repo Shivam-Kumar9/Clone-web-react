@@ -1,32 +1,50 @@
-
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react';
+import Card from './card.jsx';
+import './items.css';
 
 function Items() {
-    const [items, setItems] = React.useState(null);
-   useEffect(()=>{
-    fetchData()
-   },[])
-     
-    async function fetchData(){
-        let res = await fetch("https://api.escuelajs.co/api/v1/products")
-        let data = await res.json()
-        console.log(data)
-        setItems(data)
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch('https://fakestoreapi.com/products');
+        if (!res.ok) {
+          throw new Error('Failed to fetch products');
+        }
+        const data = await res.json();
+        setItems(data);
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
     }
-    // fetchData()
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div className="items-loading">Loading products...</div>;
+  }
+
+  if (error) {
+    return <div className="items-error">Error: {error}</div>;
+  }
+
   return (
-    <div>
-        {items && items.map((item)=>{
-            return(
-                <div key={item.id}>
-                    <h1>{item.title}</h1>
-                    <img src={item.images[0]} alt={item.title} style={{width : '200px', height : '200px'}}/>
-                    <h3>{item.price}</h3>
-                </div>
-            )
-        })}
+    <div className="items-container">
+      <h2 className="items-title">Our Products</h2>
+      <div className="items-grid">
+        {items.length > 0 ? (
+          items.map((item) => <Card key={item.id} product={item} />)
+        ) : (
+          <p className="items-empty">No products available</p>
+        )}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Items
+export default Items;
