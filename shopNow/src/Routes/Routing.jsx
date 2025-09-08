@@ -1,11 +1,9 @@
 
-
-import React from 'react'
 import Home from '../Pages/home'
 import Register from '../Pages/Register'  
 import Login from '../Pages/Login'
-import Products from '../Pages/Products'
-import Product from '../Pages/Product.jsx'
+import Products from '../Pages/ProductList.jsx'
+import Product from '../Pages/ProductDetails.jsx'
 import Cart from '../Pages/Cart'
 import NotFound from '../Pages/404'
 
