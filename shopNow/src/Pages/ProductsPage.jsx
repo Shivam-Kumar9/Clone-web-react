@@ -7,20 +7,25 @@ import ProductList from '../Components/Products/ProductList'
 import Pagination from '../Components/Products/Pagination'
 
 function Products() {
-     
+    
     const {fetchData, loading, error} = useFetchProducts("https://fakestoreapi.com/products")
     const [currentPage, setCurrentPage] = useState(0) 
-     
+    
     let itemLimit = 10
     let totalPages = Math.ceil(fetchData.length/itemLimit)
+
+    const start =  currentPage * itemLimit
+    const end   =  start + itemLimit 
+    const currentItems = fetchData.slice(start,end)
+
 
   return (
     <>
      <Navbar/>
      <div>Products</div>
  
-     <ProductList products={fetchData}/>
-     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage}/>
+     <ProductList products={currentItems}/>
+     <Pagination   currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage}/>
       
      {/* <Items/> */}
      <Footer/>
