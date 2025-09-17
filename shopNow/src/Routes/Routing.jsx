@@ -2,8 +2,8 @@
 import Home from '../Pages/home'
 import Register from '../Pages/Register'  
 import Login from '../Pages/Login'
-import Products from '../Pages/ProductList.jsx'
-import Product from '../Pages/ProductDetails.jsx'
+import Products from '../Pages/ProductsPage.jsx'
+import Product from '../Pages/SingleProductPage.jsx'
 import Cart from '../Pages/Cart'
 import NotFound from '../Pages/404'
 

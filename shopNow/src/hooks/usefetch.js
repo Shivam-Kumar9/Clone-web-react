@@ -12,7 +12,7 @@ export default function useFetchProducts(URL) {
         throw new Error("some thing wrong in server");
       }
       let data = await res.json();
-      setFetchData(data);
+      setFetchData(data?.products);
     } catch (error) {
       setError(error.message);
     } finally {

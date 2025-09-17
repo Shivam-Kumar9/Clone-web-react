@@ -1,0 +1,28 @@
+
+.pagination{
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    /* align-items: center */
+    flex-wrap: wrap;
+}
+
+.page_nev , .pagination div {
+    border: 1px solid;
+    padding: 0.5rem 0.9rem;
+    font-size: 15px;
+    margin: 0.4rem;
+    cursor: pointer;
+    border-radius: 999px;
+}
+.pagination .Active{
+    background-color: black;
+    color: white;
+}
+
+.page_nev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+} 
