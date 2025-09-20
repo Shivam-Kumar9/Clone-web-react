@@ -16,12 +16,12 @@ function ProductList({ products }) {
           rating={product.rating}
           tags={product.tags}
           images={product.images}
-          thumbnail={product.thumbnail}
+          
         />
       ))}
     </div>
   );
-}
+}  
 
 export default ProductList;
 
