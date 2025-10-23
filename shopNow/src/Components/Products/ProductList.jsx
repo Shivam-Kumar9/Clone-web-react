@@ -1,4 +1,3 @@
-import React from "react";
 import ProductCard from "./ProductCard";
 
 function ProductList({ products }) {
@@ -16,7 +15,6 @@ function ProductList({ products }) {
           rating={product.rating}
           tags={product.tags}
           images={product.images}
-          
         />
       ))}
     </div>
