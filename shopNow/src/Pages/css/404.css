@@ -1,6 +1,11 @@
 
 .page_not_found_div{
-    margin-top: 30vh;
-    text-align: center;
+    /* margin-top: 10vh; */
+    height: 50vh ;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: rgb(99, 99, 99);
 }
