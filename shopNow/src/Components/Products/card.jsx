@@ -14,7 +14,7 @@ const Card = ({product}) => {
           <span>★ {product.rating.rate}</span>
           <span>({product.rating.count} reviews)</span>
         </div>
-        <button className="add-to-cart-btn"  >
+        <button className="add-to-cart-btn">
           Add to Cart
         </button>
       </div>

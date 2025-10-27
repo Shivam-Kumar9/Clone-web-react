@@ -21,10 +21,10 @@ function Home() {
   return(
  <>
   <Navbar/>
-    <div className='home' >home
+    <div className='home'>home
      <div style={containerStyles}>
       <MainSlider slides={productImages}/>
-      </div> 
+      </div>
     </div>
   <Footer/>
  </>
