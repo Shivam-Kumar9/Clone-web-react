@@ -1,22 +1,26 @@
 import ProductCard from "./ProductCard";
+import "./ProductList.css";
 
 function ProductList({ products }) {
   console.log(products[0]);
   return (
-    <div>
-      {/* {JSON.stringify(products[0])} */}
-
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          title={product.title}
-          price={product.price}
-          discountPercentage={product.discountPercentage}
-          rating={product.rating}
-          tags={product.tags}
-          images={product.images}
-        />
-      ))}
+    <div className="product-list">
+      {products && products.length > 0 ? (
+        products.map((product) => (
+          <ProductCard
+            key={product.id}
+            title={product.title}
+            price={product.price}
+            discountPercentage={product.discountPercentage}
+            rating={product.rating}
+            tags={product.tags}
+            images={product.images}
+            thumbnail={product.thumbnail || product.images?.[0]} // Fallback for image
+          />
+        ))
+      ) : (
+        <p>No products available</p> // Inline fallback, or use CSS pseudo-element
+      )}
     </div>
   );
 }  

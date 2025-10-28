@@ -14,7 +14,7 @@ function Products() {
     const {fetchData, loading, error} = useFetchProducts(URL)
     const [currentPage, setCurrentPage] = useState(0) 
     
-    let itemLimit = 10
+    let itemLimit = 20
     let totalPages = Math.ceil(fetchData.length/itemLimit)
 
     const start =  currentPage * itemLimit
