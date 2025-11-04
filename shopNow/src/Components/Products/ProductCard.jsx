@@ -1,28 +1,29 @@
 
 
-
 import './productcard.css'
 import  { useContext } from 'react';
 import { AuthData } from '../../Context/authContext'; // Assuming this context exists from previous components
 
 function ProductCard({ title, price, discountPercentage, rating, tags, images, thumbnail }) {
-  const { userData, setUserData } = useContext(AuthData);
+  const { userData, token, setUserData } = useContext(AuthData);
 
   const handleAddToCart = () => {
-    if (!userData || !userData.some(user => user.token)) {
+    console.log(userData, token);
+    if (!token) {
       alert('Please log in to add items to cart');
       return;
     }
 
-    const product = { title, price, discountPercentage, rating, tags, images, thumbnail };
-    const loggedInUser = userData.find(user => user.token);
+    const product = {id, title, price, discountPercentage, rating, tags, images, thumbnail };
+    // const loggedInUser = userData.find(user => (user.name === token));
     const updatedUserData = userData.map(user => {
-      if (user.token) {
+      if (user.name === token){
+     
         return { ...user, cart: [...(user.cart || []), product] };
       }
       return user;
     });
-
+    console.log(updatedUserData ,"cart");
     setUserData(updatedUserData);
     localStorage.setItem('userData', JSON.stringify(updatedUserData));
     alert(`${title} added to cart!`);
@@ -45,7 +46,7 @@ function ProductCard({ title, price, discountPercentage, rating, tags, images, t
         <p className="product-discount">Discount: {discountPercentage}%</p>
         <p className="product-rating">Rating: {rating} ★</p>
         <div className="product-tags">
-          <span className="tags-label">Tags:</span>
+          <span className="tags-label"></span>
           {tags.map((tag) => (
             <span key={tag} className="tag">{tag}</span>
           ))}

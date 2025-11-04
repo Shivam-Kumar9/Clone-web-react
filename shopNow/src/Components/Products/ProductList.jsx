@@ -2,13 +2,14 @@ import ProductCard from "./ProductCard";
 import "./ProductList.css";
 
 function ProductList({ products }) {
-  console.log(products[0]);
+  // console.log(products[0]);
   return (
     <div className="product-list">
       {products && products.length > 0 ? (
         products.map((product) => (
           <ProductCard
             key={product.id}
+            id={product.id}
             title={product.title}
             price={product.price}
             discountPercentage={product.discountPercentage}
