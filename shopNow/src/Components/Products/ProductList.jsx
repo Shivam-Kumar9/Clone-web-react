@@ -4,7 +4,7 @@ import "./ProductList.css";
 function ProductList({ products }) {
   // console.log(products[0]);
   return (
-    <div className="product-list">
+  <div className="product-list">
       {products && products.length > 0 ? (
         products.map((product) => (
           <ProductCard
